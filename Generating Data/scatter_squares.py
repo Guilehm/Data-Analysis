@@ -17,5 +17,6 @@ plt.tick_params(axis='both', which='major', labelsize=14)
 # define the interval for each axis
 plt.axis([0, 1100, 0, 1100000])
 
+plt.savefig('graphs/scatter_squares.png')
 plt.show()
 
