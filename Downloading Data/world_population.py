@@ -1,5 +1,7 @@
 import json
 
+from country_codes import get_country_code
+
 # load the data into a list
 filename = 'population_data.json'
 with open(filename) as f:
@@ -11,4 +13,8 @@ for pop_dict in pop_data:
     if year == '2010':
         country_name = pop_dict['Country Name']
         population = pop_dict['Value']
-        print(country_name + ": " + population)
+        code = get_country_code(country_name)
+        if code:
+            print(code + ": " + str(population))
+        else:
+            print('ERROR - ' + country_name)
